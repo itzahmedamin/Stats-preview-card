@@ -1,0 +1,144 @@
+:root {
+    --Very-dark-blue: hsl(233, 47%, 7%);                            /* (main background) */
+    --Dark-desaturated-blue: hsl(244, 38%, 16%);                  /* (card background) */
+    --Soft-violet: hsl(277, 64%, 61%);                           /* (accent) */
+    --White: hsl(0, 0%, 100%);                                  /* (main heading, stats) */
+    --Slightly-transparent-white: hsla(0, 0%, 100%, 0.75);      /* (main paragraph) */
+    --Slightly-transparent-white: hsla(0, 0%, 100%, 0.6);       /* (stat headings) */
+}
+body {
+    font-family: 'Inter', sans-serif;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Very-dark-blue);
+}
+.card {
+    width: 1200px;
+    background-color: var(--Dark-desaturated-blue);
+    border-radius: .5rem;
+}
+.card .card-container {
+    display: flex;
+    justify-content: space-between;
+}
+.card .card-container .details {
+    width: 50%;
+    color: white;
+    display: flex;
+}
+
+.card .card-container .details .details-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    padding-left: 5rem;
+}
+.card .card-container .details .details-container h1 {
+    width: 450px;
+    font-size: 42px;
+}
+.card .card-container .details .details-container span {
+    color: var(--Soft-violet);
+}
+.card .card-container .details .details-container > p {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: 200;
+    width: 400px;
+    color: var(--Slightly-transparent-white);
+    line-height: 1.8;
+    margin-top: -55px;
+}
+.card .card-container .details .details-container .insights {
+    display: flex;
+}
+.card .card-container .details .details-container .insights div {
+    width: 180px;
+    display: flex;
+    flex-direction: column;
+}
+.card .card-container .details .details-container .insights h2 {
+    margin-bottom: -10px;
+}
+.card .card-container .details .details-container .insights p {
+    color: var(--Slightly-transparent-white);
+    font-weight: 200;
+    font-size: 14px;
+}
+.card .card-container .image {
+    width: 50%;
+    border-radius: .5rem;
+    position: relative;
+}
+.card .card-container .image::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(to top, purple, rgb(116, 0, 116), var(--Soft-violet));
+    opacity: .6;
+    position: absolute;
+    border-radius: .5rem;
+}
+.card .card-container .image img {
+    width: 100%;
+    height: 100%;
+    border-radius: .5rem;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+@media (max-width: 400px) {
+    body {
+        padding: 2rem;
+    }
+    .card {
+        max-width: 399px;
+    }
+    .card .card-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    .card .card-container .details {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        width: 100%;
+    }
+    .card .card-container .details .details-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 1rem;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+    }
+    .card .card-container .details .details-container h1 {
+        font-size: 30px;
+        width: 300px;
+    }
+    .card .card-container .details .details-container > p {
+        margin-top: 0;
+        width: 270px;
+    }
+    .card .card-container .details .details-container .insights {
+        flex-direction: column;
+    }
+    .card .card-container .image{
+        width: 100%;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .card .card-container .image::before {
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    .card .card-container .image img {
+        width: 100%;
+        height: 100%;
+        border-radius: .5rem;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+}
